@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Terminal, Link as LinkIcon, Home, Github } from 'lucide-react';
+import { Terminal, Link as LinkIcon, Home, Github, FileText } from 'lucide-react';
 
 export default function Layout() {
   const location = useLocation();
@@ -12,7 +12,7 @@ export default function Layout() {
             <Terminal className="h-6 w-6" />
             <span>rohanvh.me</span>
           </Link>
-          <nav className="flex gap-2 sm:gap-4">
+          <nav className="flex gap-2 sm:gap-4 flex-wrap justify-end">
             <Link
               to="/"
               className={`flex items-center gap-1.5 border border-[#008F11] px-4 py-2 text-sm font-medium transition-all ${
@@ -23,6 +23,17 @@ export default function Layout() {
             >
               <Home className="h-4 w-4" />
               <span className="hidden sm:inline">~/apps</span>
+            </Link>
+            <Link
+              to="/blog"
+              className={`flex items-center gap-1.5 border border-[#008F11] px-4 py-2 text-sm font-medium transition-all ${
+                location.pathname.startsWith('/blog')
+                  ? 'bg-[#00FF41] text-black shadow-[0_0_10px_rgba(0,255,65,0.5)]'
+                  : 'bg-black text-[#00FF41] hover:bg-[#008F11] hover:text-black'
+              }`}
+            >
+              <FileText className="h-4 w-4" />
+              <span className="hidden sm:inline">~/blog</span>
             </Link>
             <Link
               to="/links"
@@ -52,8 +63,13 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="mt-20 border-t border-[#008F11] py-8 text-center text-sm text-[#008F11]">
+      <footer className="mt-20 border-t border-[#008F11] py-8 text-center text-sm text-[#008F11] space-y-2">
         <p>EOF. 🐈‍⬛</p>
+        <p className="text-xs opacity-75">
+          &lt;/&gt; Built with <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00FF41] hover:underline underline-offset-2 transition-colors">AI Studio</a>
+          <span className="mx-2">|</span>
+          Powered by React & Tailwind
+        </p>
       </footer>
     </div>
   );

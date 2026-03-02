@@ -11,3 +11,22 @@ body {
   background-color: #000;
   color: #00FF41;
 }
+
+.markdown-body {
+  @apply text-[#00FF41] text-base leading-relaxed space-y-6;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  @apply text-white font-bold mt-8 mb-4 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)];
+}
+.markdown-body h1 { @apply text-3xl; }
+.markdown-body h2 { @apply text-2xl border-b border-[#008F11] pb-2; }
+.markdown-body h3 { @apply text-xl; }
+.markdown-body p { @apply mb-4; }
+.markdown-body a { @apply text-[#00FF41] underline underline-offset-4 hover:text-white transition-colors; }
+.markdown-body ul { @apply list-disc list-inside mb-4 space-y-1; }
+.markdown-body ol { @apply list-decimal list-inside mb-4 space-y-1; }
+.markdown-body blockquote { @apply border-l-4 border-[#008F11] pl-4 italic text-[#008F11] my-4; }
+.markdown-body code { @apply bg-[#001100] border border-[#008F11] px-1.5 py-0.5 rounded-sm text-sm font-mono; }
+.markdown-body pre { @apply bg-[#001100] border border-[#008F11] p-4 rounded-sm overflow-x-auto my-6; }
+.markdown-body pre code { @apply bg-transparent border-none p-0 text-[#00FF41]; }
+.markdown-body hr { @apply border-[#008F11] my-8; }
