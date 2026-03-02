@@ -1,6 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { GREETINGS, TITLES } from '../config';
 
 const apps = [
   {
@@ -27,17 +28,26 @@ const apps = [
 
 export default function Home() {
   const [greeting, setGreeting] = useState<string | null>(null);
+  const [title, setTitle] = useState(TITLES[0]);
+
+  useEffect(() => {
+    setTitle(TITLES[Math.floor(Math.random() * TITLES.length)]);
+  }, []);
 
   const handleGreet = () => {
-    const greetings = [
-      "Hello, World!",
-      "Access Granted.",
-      "System Online.",
-      "Welcome back, user.",
-      "Initializing protocols...",
-    ];
-    setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
+    setGreeting(GREETINGS[Math.floor(Math.random() * GREETINGS.length)]);
     setTimeout(() => setGreeting(null), 3000);
+  };
+
+  const renderTitle = (text: string) => {
+    const parts = text.split(/(Rohan's|Rohan)/g);
+    return parts.map((part, i) => 
+      (part === "Rohan's" || part === "Rohan") ? (
+        <span key={i} className="text-[#00FF41]">{part}</span>
+      ) : (
+        <span key={i} className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">{part}</span>
+      )
+    );
   };
 
   return (
@@ -73,7 +83,7 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
         >
-          Rohan's <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Playground</span>
+          {renderTitle(title)}
         </motion.h1>
       </section>
 
