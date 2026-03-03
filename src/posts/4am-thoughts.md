@@ -7,7 +7,7 @@ excerpt: Just Wow
 
 Ok Ok Ok.. Finally here.
 
-Im awwwwed is that nowhere from creating this site to publishing this post i had to use my laptop.
+Im awwwwed that nowhere from creating this site to publishing this post i had to use my laptop.
 
 This is testiment that how much good ai goodat became to build full fledged sites with few lines of instructions.
 
