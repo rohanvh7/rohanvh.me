@@ -13,13 +13,13 @@ This is testiment that how much good ai  became to build full fledged sites with
 
 Site still looks sloppy. missing that human touch to it.. can't pinpoint specifically. May be its ugly greet.sh or may be its theme.
 
-I am not web developer.. ohh that was not surpsing....
+I am not web developer.. ohh that was not surprising....
 
 Ok AI studio is Cool. Thanks to Github Pages I can host this for free.
 
 namecheap been awesome provider for my domain. easy to setup, easy to maintain.
 
-Termux is used to edit this post and Push chnages.
+Termux is used to edit this post and Push changes.
 
 Nobody cares....... Peacesssssss
 
