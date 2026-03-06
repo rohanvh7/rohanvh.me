@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Terminal, Link as LinkIcon, Home, Github, FileText } from 'lucide-react';
+import { Terminal, Link as LinkIcon, Home, Github, FileText, User } from 'lucide-react';
 
 export default function Layout() {
   const location = useLocation();
@@ -23,6 +23,17 @@ export default function Layout() {
             >
               <Home className="h-4 w-4" />
               <span className="hidden sm:inline">~/apps</span>
+            </Link>
+            <Link
+              to="/about"
+              className={`flex items-center gap-1.5 border border-[#008F11] px-4 py-2 text-sm font-medium transition-all ${
+                location.pathname === '/about'
+                  ? 'bg-[#00FF41] text-black shadow-[0_0_10px_rgba(0,255,65,0.5)]'
+                  : 'bg-black text-[#00FF41] hover:bg-[#008F11] hover:text-black'
+              }`}
+            >
+              <User className="h-4 w-4" />
+              <span className="hidden sm:inline">~/about</span>
             </Link>
             <Link
               to="/blog"
